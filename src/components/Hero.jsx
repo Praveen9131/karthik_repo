@@ -14,7 +14,7 @@ function HeroPanel() {
           <span className="sc-label">flagship track built for Agentic AI</span>
         </div>
         <div className="sc-right">
-          <span className="sc-big">15</span>
+          <span className="sc-big">30</span>
           <span className="sc-label">week structured curriculum</span>
         </div>
       </div>
@@ -25,7 +25,7 @@ function HeroPanel() {
           <span className="sc-label">flagship tracks — Agentic AI and DSA</span>
         </div>
         <div className="hero-stat-card">
-          <span className="sc-big">3 mo</span>
+          <span className="sc-big">6 mo</span>
           <span className="sc-label">to job-ready</span>
         </div>
         <div className="hero-stat-card">
