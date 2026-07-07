@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generative AI — Codai.ai Curriculum</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/curriculum/style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/#curriculum">&larr; Back to Codai.ai</a>
+
+  <header class="course-hero">
+    <div class="kicker">Course syllabus</div>
+    <h1>Generative AI</h1>
+    <p class="hero-sub">Working with large language models in production: APIs, prompting, embeddings, retrieval-augmented generation, fine-tuning, and multimodal systems.</p>
+    <div class="badges"><span class="badge">6 WEEKS</span><span class="badge">LLMS · RAG · FINE-TUNING</span></div>
+  </header>
+
+  <div class="content-bar">
+    <h2>Course content</h2>
+    <button type="button" class="toggle-all" data-toggle-all>Expand all sections</button>
+  </div>
+  <div class="content-meta"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg><span>5 sections &bull; 33 lectures total</span></div>
+
+  <div class="accordion">
+    
+    <details class="mod-item" open>
+      <summary class="mod-head">
+        <span class="mod-head-left">
+          <svg class="chev" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          <span class="mod-code">M-01</span>
+          <span class="mod-title">LLM Foundations</span>
+        </span>
+        <span class="mod-meta">7 lectures &bull; Week 1</span>
+      </summary>
+      <div class="mod-body">
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">How LLMs work: pretraining, tokenization (BPE), context windows</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Instruction tuning, RLHF, DPO (concepts)</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Model landscape: GPT, Claude, Gemini, Llama, Mistral; open vs closed</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Sampling: temperature, top-p, top-k, penalties</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Limitations: hallucination, cutoff, context limits</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">APIs: OpenAI, Anthropic, Google Gemini</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Structured outputs, JSON mode, function / tool calling</span></span>
+          </div></div>
+    </details>
+
+    <details class="mod-item">
+      <summary class="mod-head">
+        <span class="mod-head-left">
+          <svg class="chev" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          <span class="mod-code">M-02</span>
+          <span class="mod-title">Prompt Engineering</span>
+        </span>
+        <span class="mod-meta">6 lectures &bull; Week 2</span>
+      </summary>
+      <div class="mod-body">
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Zero-shot, few-shot, chain-of-thought</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">System prompts, role prompting, output formatting</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">ReAct prompting; self-consistency</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Prompt templates &amp; versioning</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Prompt injection &amp; jailbreak awareness (security)</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Evaluating prompt quality</span></span>
+          </div></div>
+    </details>
+
+    <details class="mod-item">
+      <summary class="mod-head">
+        <span class="mod-head-left">
+          <svg class="chev" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          <span class="mod-code">M-03</span>
+          <span class="mod-title">Embeddings &amp; RAG</span>
+        </span>
+        <span class="mod-meta">8 lectures &bull; Weeks 3–4</span>
+      </summary>
+      <div class="mod-body">
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Embedding models: OpenAI, Cohere, sentence-transformers</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Similarity: cosine, dot product, Euclidean</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Vector DBs: ChromaDB, FAISS, Pinecone, Qdrant, Weaviate, pgvector</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Chunking: fixed, recursive, semantic, document-aware</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">End-to-end RAG pipeline</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Advanced RAG: hybrid search (BM25 + dense), reranking, query rewriting, HyDE, parent-document retrieval</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Multimodal RAG (images + text)</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Evaluation: RAGAS, faithfulness, answer relevance</span></span>
+          </div></div>
+    </details>
+
+    <details class="mod-item">
+      <summary class="mod-head">
+        <span class="mod-head-left">
+          <svg class="chev" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          <span class="mod-code">M-04</span>
+          <span class="mod-title">Fine-Tuning &amp; Open-Source LLMs</span>
+        </span>
+        <span class="mod-meta">6 lectures &bull; Week 5</span>
+      </summary>
+      <div class="mod-body">
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Fine-tune vs RAG vs prompting — decision framework</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">PEFT: LoRA, QLoRA</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Quantization: GGUF, GPTQ, AWQ, bitsandbytes</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Local models: Ollama, vLLM, llama.cpp</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Hugging Face: datasets, transformers, TRL</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Instruction dataset preparation</span></span>
+          </div></div>
+    </details>
+
+    <details class="mod-item">
+      <summary class="mod-head">
+        <span class="mod-head-left">
+          <svg class="chev" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          <span class="mod-code">M-05</span>
+          <span class="mod-title">Multimodal &amp; Production GenAI</span>
+        </span>
+        <span class="mod-meta">6 lectures &bull; Week 6</span>
+      </summary>
+      <div class="mod-body">
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Diffusion models; Stable Diffusion / DALL·E workflows</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Vision-language models (GPT-4V, Claude vision, Gemini)</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Speech: Whisper (STT), TTS</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Observability: LangSmith, Langfuse</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Caching, rate limiting, cost optimization</span></span>
+          </div>
+          <div class="lec-row">
+            <span class="lec-left"><svg class="ic-play" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><span class="lec-title">Guardrails &amp; moderation; LLM-as-judge evaluation</span></span>
+          </div></div>
+    </details>
+  </div>
+
+  <div class="project-card">
+    <div class="project-label">Course project</div>
+    <p>Production-grade RAG chatbot over custom documents — hybrid search, reranking, citations, an evaluation suite, and a Streamlit / FastAPI frontend.</p>
+  </div>
+
+  <footer class="course-footer">
+    <span>&copy; 2026 Codai.ai</span>
+    <a href="/#curriculum">Explore all courses &rarr;</a>
+  </footer>
+</div>
+<script src="/curriculum/accordion.js"></script>
+</body>
+</html>

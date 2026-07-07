@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Curriculum — Codai.ai · Python · DSA · CP · Data Science · GenAI · Agentic AI</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     Codai.ai — Course Curriculum. InteligenAI theme, matching the
+     main site: white ground, near-black brown ink, vivid orange
+     pen, warm graph paper, plotted learning curves, cream cards.
+     Each course reads like a Python source file.
+     Display: Poppins · Body: Open Sans
+     ============================================================ */
+  :root{
+    --sheet:#ffffff; --board:#fff6ee; --card:#fef1e4; --card-2:#ffffff;
+    --ink:#1c0d0a; --ink-soft:rgba(28,13,10,.72); --ink-mute:#5a5a5a;
+    --gold:#ff6210; --gold-soft:#ff7a2e; --line:#e5d7d1;
+    --grid-minor:rgba(255,98,16,.05); --grid-major:rgba(255,98,16,.10);
+    --display:"Poppins",system-ui,sans-serif;
+    --body:"Open Sans",system-ui,sans-serif;
+    --mono:"Open Sans",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--sheet);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:rgba(255,98,16,.32)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:75rem;margin:0 auto;padding:2rem 1.25rem 6rem}
+
+  /* ---------- Header: a plotted learning curve on graph paper ---------- */
+  header{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;
+    background-color:var(--board);
+    background-image:
+      linear-gradient(var(--grid-minor) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid-minor) 1px,transparent 1px),
+      linear-gradient(var(--grid-major) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid-major) 1px,transparent 1px);
+    background-size:9px 9px,9px 9px,45px 45px,45px 45px;
+    padding:2.25rem 2rem;margin-bottom:2rem}
+  .header-curve{position:absolute;right:0;top:0;bottom:0;width:min(48%,30rem);pointer-events:none;opacity:.9}
+  .header-inner{position:relative;max-width:44rem}
+  .back{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.72rem;
+    letter-spacing:.06em;color:var(--ink-mute);margin-bottom:1.25rem;transition:color .15s}
+  .back:hover{color:var(--gold)}
+  .kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+  h1{font-family:var(--display);font-size:clamp(2rem,4.5vw,3rem);font-weight:700;letter-spacing:-.02em;line-height:1.05;margin:.55rem 0 .7rem}
+  .sub{color:var(--ink-soft);font-size:1rem;max-width:38rem}
+  .sub code{font-family:var(--mono);color:var(--gold-soft);font-size:.85rem;background:rgba(255,98,16,.09);
+    padding:.05rem .35rem;border-radius:4px}
+
+  /* ---------- Tabs: the six course files ---------- */
+  .tabbar{display:flex;gap:.4rem;overflow-x:auto;border-bottom:1px solid var(--line);
+    margin-top:2.25rem;padding-bottom:0;scrollbar-width:thin}
+  .tab{flex:0 0 auto;font-family:var(--mono);font-size:.8rem;color:var(--ink-mute);background:transparent;
+    border:1px solid transparent;border-bottom:none;border-radius:9px 9px 0 0;padding:.65rem 1.05rem;cursor:pointer;
+    display:flex;align-items:center;gap:.55rem;transition:color .15s,background .15s;white-space:nowrap}
+  .tab .dot{width:7px;height:7px;border-radius:50%;background:var(--line);transition:background .15s}
+  .tab .n{color:var(--gold);font-weight:600}
+  .tab:hover{color:var(--ink)}
+  .tab.active{color:var(--ink);background:var(--card);border-color:var(--line);position:relative;top:1px}
+  .tab.active .dot{background:var(--gold);box-shadow:0 0 0 3px rgba(255,98,16,.18)}
+  .tab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* ---------- Course panel ---------- */
+  .panel{display:none;background:var(--card);border:1px solid var(--line);border-top:none;
+    border-radius:0 0 14px 14px;padding:2rem 2rem 2.25rem}
+  .panel.active{display:block;animation:fade .28s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+  .course-code{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:.5rem}
+  .course-head{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem .85rem;margin-bottom:.7rem}
+  .course-head h2{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,1.9rem);font-weight:700;letter-spacing:-.015em}
+  .badge{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;
+    padding:.28rem .6rem;border-radius:999px;border:1px solid rgba(255,98,16,.45);color:var(--gold);white-space:nowrap}
+  .course-desc{color:var(--ink-soft);font-size:.98rem;margin-bottom:1.6rem;max-width:52rem}
+
+  /* ---------- Modules (ledger entries) ---------- */
+  details{background:var(--card-2);border:1px solid var(--line);border-radius:10px;margin-bottom:.7rem;overflow:hidden;
+    transition:border-color .18s ease}
+  details[open]{border-color:rgba(255,98,16,.4)}
+  summary{cursor:pointer;padding:.9rem 1.1rem;font-weight:700;font-size:.98rem;display:flex;align-items:center;gap:.7rem;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary .mod{font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--gold);min-width:3.2rem;letter-spacing:.05em}
+  summary .dur{margin-left:auto;font-family:var(--mono);font-size:.66rem;color:var(--ink-mute);font-weight:400;text-transform:uppercase;letter-spacing:.08em}
+  /* Shared module-toggle chevron — one chevron-down SVG for every module
+     card (M-01 → however many exist). Rotates 180° when its module opens.
+     Colored via background-color through a mask, so no per-module markup. */
+  summary::after{content:"";flex:none;width:14px;height:14px;background-color:var(--ink-mute);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+    transition:transform .25s ease,background-color .25s ease}
+  details[open] summary::after{transform:rotate(180deg);background-color:var(--gold)}
+  summary:hover{background:rgba(255,98,16,.05)}
+  summary:hover::after{background-color:var(--gold)}
+  details[open] summary{border-bottom:1px dashed var(--line)}
+  .topics{padding:.6rem 1.15rem 1rem}
+  /* Body content reveal — the shared script toggles `.open` on expand. */
+  .topics.open{animation:topics-reveal .28s ease}
+  @keyframes topics-reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  .topics ul{list-style:none;margin:0}
+
+  /* ===== Everything is tabs =====
+     Modules and sub-topics are rendered as tab strips (built by the script,
+     in the same spirit as the course tabs above). Selecting a tab reveals its
+     content; only one panel per level is shown at a time. No dropdowns / no
+     plain-text rows — the leaf item list is the only running text. */
+
+  /* Level 1 within a course — MODULE tabs */
+  .module-tabbar{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.35rem}
+  .mtab{display:flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:600;color:var(--ink-mute);
+    background:transparent;border:1px solid var(--line);border-radius:9px;padding:.55rem .95rem;cursor:pointer;
+    text-align:left;transition:color .15s,background .15s,border-color .15s}
+  .mtab:hover{color:var(--ink)}
+  .mtab.active{color:var(--ink);background:rgba(255,98,16,.12);border-color:rgba(255,98,16,.5)}
+  .mtab-code{font-family:var(--mono);font-size:.7rem;font-weight:700;color:var(--gold)}
+  .mtab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .mpanel{display:none}
+  .mpanel.active{display:block;animation:topics-reveal .24s ease}
+  .mpanel-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem .8rem;margin:0 0 1.1rem}
+  .mpanel-head h3{font-family:var(--display);font-size:1.25rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+  .mpanel-dur{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-mute)}
+
+  /* Level 2 within a module — SUB-TOPIC tabs */
+  .subtabbar{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1rem}
+  .subtab{font-size:.82rem;font-weight:600;color:var(--ink-mute);background:transparent;
+    border:1px solid var(--line);border-radius:8px;padding:.4rem .85rem;cursor:pointer;white-space:nowrap;
+    transition:color .15s,background .15s,border-color .15s}
+  .subtab:hover{color:var(--ink)}
+  .subtab.active{color:var(--ink);background:rgba(255,98,16,.12);border-color:rgba(255,98,16,.5)}
+  .subtab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .subpanel{display:none}
+  .subpanel.active{display:block;animation:topics-reveal .2s ease}
+
+  /* Level 3 — individual items: the leaf content list under the deepest tab */
+  .topics{padding:0}
+  .topics li{font-size:.98rem;font-weight:700;color:var(--ink);line-height:1.45;padding:.3rem 0 .3rem 1.1rem;position:relative}
+  .topics li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:700}
+
+  /* ---------- Project block (dashed record-book callout) ---------- */
+  .project{margin-top:1.4rem;border:1px dashed var(--gold);border-radius:10px;padding:1.1rem 1.25rem;background:rgba(255,98,16,.05)}
+  .project .pk{font-family:var(--mono);font-size:.66rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+  .project p{font-size:.95rem;color:var(--ink-soft)}
+  .project strong{color:var(--ink)}
+  .project ul{margin-top:.45rem;padding-left:1.15rem;font-size:.95rem;color:var(--ink-soft)}
+  .project li{margin-bottom:.25rem}
+
+  .note{margin-bottom:1.3rem;font-size:.85rem;color:var(--ink-soft);border-left:3px solid var(--gold);
+    padding:.55rem .9rem;background:rgba(255,98,16,.06);border-radius:0 6px 6px 0}
+
+  footer{margin-top:1.75rem;color:var(--ink-mute);font-size:.72rem;font-family:var(--mono);text-align:center;letter-spacing:.06em}
+
+  @media(max-width:640px){
+    header{padding:1.75rem 1.25rem}
+    .header-curve{display:none}
+    .panel{padding:1.4rem 1.15rem 1.6rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .panel.active{animation:none}
+    summary::after{transition:none}
+    .topics.open{animation:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg class="header-curve" viewBox="0 0 200 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M18 130 V16" stroke="#e5d7d1" stroke-width="1" fill="none"/>
+      <path d="M18 130 H192" stroke="#e5d7d1" stroke-width="1" fill="none"/>
+      <path d="M20 128 C64 124 78 92 112 60 C142 32 162 22 190 18"
+            stroke="#ff6210" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <circle cx="20" cy="128" r="3" fill="#ff6210"/>
+      <circle cx="54" cy="116" r="3" fill="#ff6210"/>
+      <circle cx="88" cy="82" r="3" fill="#ff6210"/>
+      <circle cx="120" cy="54" r="3" fill="#ff6210"/>
+      <circle cx="154" cy="32" r="3" fill="#ff6210"/>
+      <circle cx="190" cy="18" r="4" fill="#ff6210"/>
+    </svg>
+    <div class="header-inner">
+      <a class="back" href="/#curriculum">← Back to Codai.ai</a>
+      <div class="kicker">Full Program · Python Track</div>
+      <h1>Course Curriculum</h1>
+      <p class="sub">Six courses that build in sequence — from your first line of <code>Python 3</code> through DSA, competitive programming, data science, generative AI, and autonomous agents. Open any file below for its full syllabus.</p>
+    </div>
+  </header>
+
+  <nav class="tabbar" role="tablist" aria-label="Courses">
+    <button class="tab active" role="tab" aria-selected="true" data-target="t1"><span class="dot"></span><span class="n">01</span>python_oops.py</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="t2"><span class="dot"></span><span class="n">02</span>dsa.py</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="t3"><span class="dot"></span><span class="n">03</span>competitive.py</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="t4"><span class="dot"></span><span class="n">04</span>data_science.py</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="t5"><span class="dot"></span><span class="n">05</span>generative_ai.py</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="t6"><span class="dot"></span><span class="n">06</span>agentic_ai.py</button>
+  </nav>
+
+  <!-- ============ TAB 1 : PYTHON FUNDAMENTALS + OOP ============ -->
+  <section class="panel active" id="t1" role="tabpanel">
+    <div class="course-head"><h2>Python Programming: Fundamentals to OOP</h2><span class="badge">6 weeks</span><span class="badge">No prerequisites</span></div>
+    <p class="course-desc">Absolute-beginner-friendly course covering everything from your first line of Python to full object-oriented design, exception handling, and clean-code principles.</p>
+
+    <details open><summary><span class="mod">M-01</span> Getting Started with Python <span class="dur">Week 1</span></summary>
+      <div class="topics"><ul>
+        <li>How Python runs code: interpreter, bytecode, CPython</li>
+        <li>Setup: Python, VS Code, Jupyter, Git &amp; GitHub basics</li>
+        <li>Variables, data types, type casting, id() &amp; mutability</li>
+        <li>Input/output, f-strings and formatting</li>
+        <li>Operators: arithmetic, relational, logical, bitwise, identity, membership</li>
+        <li>Number systems: binary, decimal, hexadecimal</li>
+        <li>Linux / terminal essentials</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-02</span> Control Flow <span class="dur">Week 2</span></summary>
+      <div class="topics"><ul>
+        <li>if / elif / else, nested conditions, ternary expressions</li>
+        <li>match-case (structural pattern matching)</li>
+        <li>for &amp; while loops, range(), enumerate(), zip()</li>
+        <li>break, continue, loop-else</li>
+        <li>Pattern-printing problems (nested loop practice)</li>
+        <li>Modulo arithmetic &amp; basic math for programming</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-03</span> Functions &amp; Recursion <span class="dur">Week 3</span></summary>
+      <div class="topics"><ul>
+        <li>Defining functions, return values, docstrings</li>
+        <li>Default, keyword, *args and **kwargs</li>
+        <li>Scope: local, global, nonlocal; closures</li>
+        <li>Lambda, map, filter, reduce</li>
+        <li>Recursion: factorial, Fibonacci, Tower of Hanoi</li>
+        <li>Decorators &amp; generators (yield) — intro</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-04</span> Built-in Data Structures <span class="dur">Week 4</span></summary>
+      <div class="topics"><ul>
+        <li>Strings: immutability, slicing, methods</li>
+        <li>Lists &amp; tuples: operations, sorting with key functions</li>
+        <li>Dictionaries &amp; sets: methods, comprehension patterns</li>
+        <li>List / dict / set comprehensions</li>
+        <li>collections module: Counter, defaultdict, deque, namedtuple</li>
+        <li>Shallow vs deep copy</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-05</span> Object-Oriented Programming <span class="dur">Weeks 5–6</span></summary>
+      <div class="topics">
+        <h4>Core OOP</h4>
+        <ul>
+          <li>Classes, objects, __init__, self</li>
+          <li>Encapsulation: name mangling, @property getters/setters</li>
+          <li>Abstraction: ABC module, abstract methods</li>
+          <li>Inheritance: single, multiple, multilevel, MRO &amp; super()</li>
+          <li>Polymorphism: overriding, duck typing, operator overloading</li>
+          <li>Instance vs class vs static methods; class attributes</li>
+          <li>Dunder methods: __str__, __repr__, __eq__, __len__, __iter__</li>
+          <li>Composition vs inheritance; dataclasses</li>
+        </ul>
+        <h4>Robust Python</h4>
+        <ul>
+          <li>Exception handling: try/except/else/finally, custom exceptions</li>
+          <li>File handling: text, CSV, JSON; context managers (with)</li>
+          <li>Modules, packages, virtual environments (venv, pip)</li>
+          <li>Type hints &amp; mypy basics</li>
+          <li>Design patterns: Singleton, Factory, Observer, Strategy</li>
+          <li>SOLID principles overview</li>
+        </ul>
+      </div>
+    </details>
+
+    <div class="project"><div class="pk">Course Project</div>
+      <p>Console-based <strong>Library Management System</strong> (or Bank Account System) built with full OOP — inheritance, polymorphism, custom exceptions, and JSON/CSV persistence.</p>
+    </div>
+  </section>
+
+  <!-- ============ TAB 2 : DSA ============ -->
+  <section class="panel" id="t2" role="tabpanel">
+    <div class="course-head"><h2>Data Structures &amp; Algorithms in Python</h2><span class="badge">5 modules</span><span class="badge">52 periods</span></div>
+
+    <details open><summary><span class="mod">M-01</span> Programming &amp; Computer Fundamentals <span class="dur">10 periods</span></summary>
+      <div class="topics">
+        <h4>Programming Fundamentals</h4>
+        <ul>
+          <li>Variables &amp; data types</li>
+          <li>Operators</li>
+          <li>Basic input / output</li>
+          <li>Conditional statements</li>
+          <li>Looping constructs</li>
+          <li>Functions</li>
+          <li>Introductory arrays &amp; strings</li>
+          <li>Basic memory concepts</li>
+          <li>Introduction to classes &amp; objects</li>
+        </ul>
+        <h4>Computer Fundamentals</h4>
+        <ul>
+          <li>Memory hierarchy: RAM, ROM, Cache &amp; Registers</li>
+          <li>Memory layout: stack, heap, code segment, data segment &amp; static memory</li>
+        </ul>
+        <h4>Execution &amp; Memory Management</h4>
+        <ul>
+          <li>Process vs. thread</li>
+          <li>Call-stack mechanics</li>
+          <li>Garbage collection</li>
+          <li>Pointers &amp; references</li>
+        </ul>
+      </div>
+    </details>
+
+    <details><summary><span class="mod">M-02</span> Complexity Analysis, Arrays &amp; Strings <span class="dur">10 periods</span></summary>
+      <div class="topics">
+        <h4>Complexity Analysis</h4>
+        <ul>
+          <li>Time &amp; space complexity evaluation</li>
+          <li>Asymptotic notations (Big O, Big Omega, Big Theta)</li>
+          <li>Recurrence relations</li>
+          <li>Master Theorem</li>
+          <li>Amortized analysis</li>
+        </ul>
+        <h4>Arrays</h4>
+        <ul>
+          <li>1D &amp; 2D arrays (matrices)</li>
+          <li>Prefix sum</li>
+          <li>Difference arrays</li>
+          <li>Sliding window (fixed &amp; variable)</li>
+          <li>Two-pointer techniques (same direction, opposite direction, fast-slow)</li>
+          <li>Kadane's algorithm</li>
+          <li>Cyclic sort</li>
+          <li>Monotonic arrays</li>
+          <li>Interval problems</li>
+          <li>Coordinate compression</li>
+          <li>Array hashing</li>
+        </ul>
+        <h4>Strings</h4>
+        <ul>
+          <li>String manipulation &amp; parsing</li>
+          <li>Palindrome checking</li>
+          <li>Frequency counting</li>
+          <li>String matching (KMP, Rabin–Karp, Z Algorithm)</li>
+          <li>Trie-based string processing</li>
+          <li>Encoding / decoding techniques</li>
+        </ul>
+      </div>
+    </details>
+
+    <details><summary><span class="mod">M-03</span> Searching, Sorting, Recursion &amp; Backtracking <span class="dur">10 periods</span></summary>
+      <div class="topics">
+        <h4>Searching &amp; Sorting</h4>
+        <ul>
+          <li>Linear search</li>
+          <li>Binary search</li>
+          <li>Binary search on answer</li>
+          <li>Bubble sort</li>
+          <li>Selection sort</li>
+          <li>Insertion sort</li>
+          <li>Merge sort</li>
+          <li>Quick sort</li>
+          <li>Heap sort</li>
+          <li>Counting sort</li>
+          <li>Radix sort</li>
+          <li>Bucket sort</li>
+          <li>Divide-and-conquer strategies</li>
+          <li>Quick select</li>
+          <li>Partitioning logic</li>
+        </ul>
+        <h4>Recursion</h4>
+        <ul>
+          <li>Basic recursion</li>
+          <li>Parameterized recursion</li>
+          <li>Functional recursion</li>
+          <li>Multiple recursion</li>
+          <li>Recursion-tree analysis</li>
+          <li>Divide-and-conquer applications</li>
+        </ul>
+        <h4>Backtracking</h4>
+        <ul>
+          <li>Generating subsequences</li>
+          <li>Subsets</li>
+          <li>Permutations</li>
+          <li>Combinations</li>
+          <li>Combination Sum</li>
+          <li>N-Queens</li>
+          <li>Sudoku solver</li>
+          <li>Maze traversal</li>
+          <li>Word search</li>
+          <li>Partition problems</li>
+        </ul>
+      </div>
+    </details>
+
+    <details><summary><span class="mod">M-04</span> Linear Data Structures &amp; Hashing <span class="dur">10 periods</span></summary>
+      <div class="topics">
+        <h4>Linked Lists</h4>
+        <ul>
+          <li>Singly linked lists</li>
+          <li>Doubly linked lists</li>
+          <li>Circular linked lists</li>
+          <li>Fast / slow pointer applications</li>
+          <li>List reversal</li>
+          <li>Merging</li>
+          <li>Cycle detection</li>
+          <li>Random pointers</li>
+          <li>Implementing LRU / LFU caches</li>
+        </ul>
+        <h4>Stacks</h4>
+        <ul>
+          <li>Array &amp; linked-list implementation</li>
+          <li>Parentheses validation</li>
+          <li>Expression evaluation</li>
+          <li>Monotonic stacks</li>
+          <li>Next greater / smaller element problems</li>
+          <li>Histogram problems</li>
+          <li>Min-stack</li>
+          <li>Frequency stacks</li>
+        </ul>
+        <h4>Queues</h4>
+        <ul>
+          <li>Standard queues</li>
+          <li>Circular queues</li>
+          <li>Deques</li>
+          <li>Priority queues</li>
+          <li>Monotonic queues</li>
+          <li>BFS queue applications</li>
+          <li>Sliding-window queues</li>
+        </ul>
+        <h4>Hashing</h4>
+        <ul>
+          <li>Hash sets &amp; hash maps</li>
+          <li>Frequency mapping</li>
+          <li>Prefix hashing</li>
+          <li>Element grouping</li>
+          <li>Pair problems</li>
+          <li>Duplicate-detection techniques</li>
+        </ul>
+      </div>
+    </details>
+
+    <details><summary><span class="mod">M-05</span> Non-Linear Data Structures <span class="dur">12 periods</span></summary>
+      <div class="topics">
+        <h4>Trees &amp; BST</h4>
+        <ul>
+          <li>Tree traversals</li>
+          <li>Views</li>
+          <li>Diameter</li>
+          <li>Path problems</li>
+          <li>LCA (lowest common ancestor)</li>
+          <li>Construction &amp; serialization</li>
+          <li>BST search</li>
+          <li>BST insert</li>
+          <li>BST delete</li>
+          <li>Kth smallest in BST</li>
+          <li>BST iterator</li>
+          <li>Validating a BST</li>
+        </ul>
+        <h4>Heaps</h4>
+        <ul>
+          <li>Min / max heaps</li>
+          <li>Heap sort</li>
+          <li>Top-K problems</li>
+          <li>K-way merge</li>
+          <li>Scheduling simulations</li>
+        </ul>
+        <h4>Graphs</h4>
+        <ul>
+          <li>Representation</li>
+          <li>DFS / BFS</li>
+          <li>Connected components</li>
+          <li>Cycle detection</li>
+          <li>Topological sorting</li>
+          <li>Shortest path (Dijkstra, Bellman-Ford)</li>
+          <li>MST (Prim, Kruskal)</li>
+          <li>Union Find</li>
+          <li>Bipartite checking</li>
+          <li>SCC (strongly connected components)</li>
+          <li>Graph coloring</li>
+        </ul>
+      </div>
+    </details>
+
+    <div class="project"><div class="pk">Course Project</div>
+      <p>Build your own <strong>Python data-structure library</strong> (linked list, stack, queue, BST, heap, trie, graph, DSU) with unit tests — plus a solved-problems tracker of <strong>150+ LeetCode problems</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ============ TAB 3 : COMPETITIVE PROGRAMMING ============ -->
+  <section class="panel" id="t3" role="tabpanel">
+    <div class="course-head"><h2>Competitive Programming (Python)</h2><span class="badge">6 weeks</span><span class="badge">Weekly contests</span></div>
+    <p class="course-desc">Contest-oriented training on Codeforces, CodeChef and AtCoder — advanced algorithms, math, and speed. Solved fully in Python (with PyPy submission tips for tight time limits).</p>
+    <div class="note">Weekly participation in at least one rated contest is mandatory, followed by upsolving of unsolved problems.</div>
+
+    <details open><summary><span class="mod">M-01</span> CP Essentials in Python <span class="dur">Week 1</span></summary>
+      <div class="topics"><ul>
+        <li>Fast I/O: sys.stdin.readline, sys.stdout, input buffering</li>
+        <li>PyPy vs CPython for contests; recursion limits &amp; iterative rewrites</li>
+        <li>Key libraries: heapq, bisect, collections, itertools, math, functools</li>
+        <li>sortedcontainers (SortedList / SortedDict) as ordered-set replacement</li>
+        <li>Overflow-free big integers; modular arithmetic (mod 1e9+7)</li>
+        <li>Contest strategy: reading fast, edge cases, penalty math</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-02</span> Number Theory &amp; Math <span class="dur">Weeks 1–2</span></summary>
+      <div class="topics"><ul>
+        <li>GCD/LCM, extended Euclidean algorithm</li>
+        <li>Sieve of Eratosthenes, segmented sieve, smallest prime factor</li>
+        <li>Prime factorization, divisor counting</li>
+        <li>Binary exponentiation; modular inverse (Fermat's little theorem)</li>
+        <li>Combinatorics: nCr with factorial precompute, inclusion–exclusion, pigeonhole</li>
+        <li>Euler's totient, Chinese Remainder Theorem</li>
+        <li>Matrix exponentiation (fast Fibonacci)</li>
+        <li>Probability &amp; expected value problems</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-03</span> Bit Manipulation <span class="dur">Week 2</span></summary>
+      <div class="topics"><ul>
+        <li>Set / clear / toggle / check bits; popcount</li>
+        <li>XOR properties &amp; classic XOR problems</li>
+        <li>Subset enumeration with bitmasks</li>
+        <li>Bitmask DP applications</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-04</span> Advanced Graphs &amp; Trees <span class="dur">Weeks 3–4</span></summary>
+      <div class="topics"><ul>
+        <li>Binary lifting; LCA in O(log n)</li>
+        <li>Euler tour &amp; tree flattening</li>
+        <li>Heavy-Light Decomposition (concept + basics)</li>
+        <li>Small-to-large merging; rerooting technique</li>
+        <li>Max-flow: Ford-Fulkerson, Edmonds-Karp, Dinic's (intro)</li>
+        <li>Bipartite matching; 2-SAT (intro)</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-05</span> Advanced Data Structures <span class="dur">Week 4</span></summary>
+      <div class="topics"><ul>
+        <li>Sparse tables (idempotent range queries)</li>
+        <li>Segment tree with lazy propagation — harder problems</li>
+        <li>Merge sort tree; persistent segment tree (concept)</li>
+        <li>Mo's algorithm (offline queries)</li>
+        <li>Sqrt decomposition</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-06</span> Advanced Techniques, Strings &amp; Geometry <span class="dur">Week 5</span></summary>
+      <div class="topics"><ul>
+        <li>Meet in the middle; ternary search; randomization</li>
+        <li>Suffix arrays &amp; LCP array</li>
+        <li>Aho–Corasick multi-pattern matching (intro)</li>
+        <li>Game theory: Nim, Grundy numbers, Sprague–Grundy</li>
+        <li>Geometry: cross product, convex hull, line intersection</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-07</span> Contest Bootcamp <span class="dur">Week 6</span></summary>
+      <div class="topics"><ul>
+        <li>2–3 virtual contests per week + upsolving discipline</li>
+        <li>Editorial-reading strategy</li>
+        <li>Rating roadmap: Newbie → Pupil → Specialist → Expert</li>
+        <li>Translating CP skills into FAANG-style interviews</li>
+      </ul></div>
+    </details>
+
+    <div class="project"><div class="pk">Course Goal</div>
+      <p>Reach a stable <strong>Codeforces Specialist rating (1400+)</strong> and solve <strong>100+ contest problems</strong> across CF / CodeChef / AtCoder / CSES.</p>
+    </div>
+  </section>
+
+  <!-- ============ TAB 4 : DATA SCIENCE ============ -->
+  <section class="panel" id="t4" role="tabpanel">
+    <div class="course-head"><h2>Data Science: ML to Deep Learning</h2><span class="badge">14 weeks</span><span class="badge">NumPy · Pandas · scikit-learn · PyTorch</span></div>
+    <p class="course-desc">From data wrangling and statistics through classical machine learning to deep learning and Transformers — every model implemented, evaluated, and deployed.</p>
+
+    <details open><summary><span class="mod">M-01</span> NumPy <span class="dur">Week 1</span></summary>
+      <div class="topics"><ul>
+        <li>ndarrays, dtypes, shape manipulation, broadcasting</li>
+        <li>Indexing, slicing, boolean masking, fancy indexing</li>
+        <li>Vectorized ops &amp; universal functions</li>
+        <li>Linear algebra: dot, matmul, eigenvalues, SVD</li>
+        <li>Random module &amp; reproducibility</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-02</span> Pandas <span class="dur">Weeks 1–2</span></summary>
+      <div class="topics"><ul>
+        <li>Series &amp; DataFrames; reading CSV, Excel, JSON, SQL, Parquet</li>
+        <li>loc / iloc, filtering, query()</li>
+        <li>Missing data: fillna, dropna, interpolation</li>
+        <li>GroupBy, aggregation, pivot tables, crosstabs</li>
+        <li>Merge, join, concat</li>
+        <li>apply, map, vectorized string ops</li>
+        <li>Time series: datetime index, resampling, rolling windows</li>
+        <li>Memory optimization &amp; categorical dtypes</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-03</span> Visualization <span class="dur">Week 2</span></summary>
+      <div class="topics"><ul>
+        <li>Matplotlib: figures, axes, subplots, customization</li>
+        <li>Seaborn: distributions, categorical plots, heatmaps, pairplots</li>
+        <li>Plotly for interactive charts (intro)</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-04</span> Statistics &amp; Math for ML <span class="dur">Weeks 3–4</span></summary>
+      <div class="topics"><ul>
+        <li>Descriptive stats: central tendency, dispersion, skew, kurtosis</li>
+        <li>Distributions: normal, binomial, Poisson, uniform, exponential</li>
+        <li>Bayes' theorem &amp; conditional probability</li>
+        <li>Sampling &amp; Central Limit Theorem</li>
+        <li>Hypothesis testing: z, t, chi-square, ANOVA, p-values</li>
+        <li>Confidence intervals; A/B testing</li>
+        <li>Correlation vs causation; covariance</li>
+        <li>Linear algebra &amp; calculus for ML: gradients, chain rule, gradient descent</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-05</span> Data Wrangling, EDA &amp; SQL <span class="dur">Week 5</span></summary>
+      <div class="topics"><ul>
+        <li>Cleaning workflows; outlier detection (IQR, z-score)</li>
+        <li>Feature engineering: one-hot / label / target encoding</li>
+        <li>Scaling: standard, min-max, robust; binning</li>
+        <li>Imbalanced data: SMOTE, class weights</li>
+        <li>SQL: joins, window functions, CTEs, aggregations</li>
+        <li>Full EDA case study on a real dataset</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-06</span> Machine Learning <span class="dur">Weeks 6–9</span></summary>
+      <div class="topics">
+        <h4>Supervised</h4>
+        <ul>
+          <li>Linear &amp; polynomial regression (OLS + gradient descent)</li>
+          <li>Regularization: Ridge, Lasso, ElasticNet</li>
+          <li>Logistic regression, KNN, Naive Bayes</li>
+          <li>Decision trees (Gini, entropy, pruning)</li>
+          <li>Bagging &amp; Random Forest</li>
+          <li>Boosting: AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost</li>
+          <li>SVM: margins &amp; kernels</li>
+        </ul>
+        <h4>Unsupervised</h4>
+        <ul>
+          <li>K-Means, hierarchical clustering, DBSCAN, GMM</li>
+          <li>PCA, t-SNE, UMAP</li>
+          <li>Anomaly detection</li>
+        </ul>
+        <h4>Evaluation &amp; Tuning</h4>
+        <ul>
+          <li>Cross-validation (k-fold, stratified)</li>
+          <li>Metrics: precision/recall/F1, ROC-AUC, RMSE, MAE, R²</li>
+          <li>Bias–variance tradeoff; over/underfitting</li>
+          <li>GridSearch, RandomSearch, Optuna</li>
+          <li>sklearn Pipelines &amp; ColumnTransformer</li>
+          <li>Interpretability: feature importance, SHAP, LIME</li>
+        </ul>
+      </div>
+    </details>
+
+    <details><summary><span class="mod">M-07</span> Deep Learning with PyTorch <span class="dur">Weeks 10–13</span></summary>
+      <div class="topics">
+        <h4>Foundations</h4>
+        <ul>
+          <li>Perceptron → MLP; activations (ReLU, sigmoid, softmax, GELU)</li>
+          <li>Forward &amp; backprop — built from scratch in NumPy</li>
+          <li>Losses (MSE, cross-entropy); optimizers (SGD, Adam, AdamW)</li>
+          <li>Dropout, batch/layer norm, early stopping, LR scheduling</li>
+          <li>PyTorch: tensors, autograd, nn.Module, DataLoader, training loops</li>
+        </ul>
+        <h4>Computer Vision</h4>
+        <ul>
+          <li>CNNs: convolutions, pooling, padding, stride</li>
+          <li>Architectures: LeNet → ResNet → EfficientNet</li>
+          <li>Transfer learning &amp; data augmentation</li>
+          <li>Object detection (YOLO) &amp; segmentation (U-Net) — intro</li>
+        </ul>
+        <h4>NLP &amp; Transformers</h4>
+        <ul>
+          <li>Tokenization; embeddings (Word2Vec, GloVe)</li>
+          <li>RNN, LSTM, GRU; seq2seq + attention</li>
+          <li>Transformers in depth: self-attention, multi-head, positional encoding</li>
+          <li>BERT vs GPT; fine-tuning with Hugging Face</li>
+        </ul>
+      </div>
+    </details>
+
+    <details><summary><span class="mod">M-08</span> MLOps Basics <span class="dur">Week 14</span></summary>
+      <div class="topics"><ul>
+        <li>Experiment tracking: MLflow / Weights &amp; Biases</li>
+        <li>Model serialization &amp; versioning</li>
+        <li>Serving with FastAPI; Docker basics</li>
+        <li>Streamlit / Gradio demos; cloud deployment overview</li>
+      </ul></div>
+    </details>
+
+    <div class="project"><div class="pk">Course Projects</div>
+      <ul>
+        <li>End-to-end ML project (e.g., churn prediction) — EDA → model → deployed API</li>
+        <li>CNN image classifier with transfer learning</li>
+        <li>NLP project: fine-tuned Transformer for text classification</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ TAB 5 : GENERATIVE AI ============ -->
+  <section class="panel" id="t5" role="tabpanel">
+    <div class="course-head"><h2>Generative AI</h2><span class="badge">6 weeks</span><span class="badge">LLMs · RAG · Fine-tuning</span></div>
+    <p class="course-desc">Working with large language models in production: APIs, prompting, embeddings, retrieval-augmented generation, fine-tuning, and multimodal systems.</p>
+
+    <details open><summary><span class="mod">M-01</span> LLM Foundations <span class="dur">Week 1</span></summary>
+      <div class="topics"><ul>
+        <li>How LLMs work: pretraining, tokenization (BPE), context windows</li>
+        <li>Instruction tuning, RLHF, DPO (concepts)</li>
+        <li>Model landscape: GPT, Claude, Gemini, Llama, Mistral; open vs closed</li>
+        <li>Sampling: temperature, top-p, top-k, penalties</li>
+        <li>Limitations: hallucination, cutoff, context limits</li>
+        <li>APIs: OpenAI, Anthropic, Google Gemini</li>
+        <li>Structured outputs, JSON mode, function / tool calling</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-02</span> Prompt Engineering <span class="dur">Week 2</span></summary>
+      <div class="topics"><ul>
+        <li>Zero-shot, few-shot, chain-of-thought</li>
+        <li>System prompts, role prompting, output formatting</li>
+        <li>ReAct prompting; self-consistency</li>
+        <li>Prompt templates &amp; versioning</li>
+        <li>Prompt injection &amp; jailbreak awareness (security)</li>
+        <li>Evaluating prompt quality</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-03</span> Embeddings &amp; RAG <span class="dur">Weeks 3–4</span></summary>
+      <div class="topics"><ul>
+        <li>Embedding models: OpenAI, Cohere, sentence-transformers</li>
+        <li>Similarity: cosine, dot product, Euclidean</li>
+        <li>Vector DBs: ChromaDB, FAISS, Pinecone, Qdrant, Weaviate, pgvector</li>
+        <li>Chunking: fixed, recursive, semantic, document-aware</li>
+        <li>End-to-end RAG pipeline</li>
+        <li>Advanced RAG: hybrid search (BM25 + dense), reranking, query rewriting, HyDE, parent-document retrieval</li>
+        <li>Multimodal RAG (images + text)</li>
+        <li>Evaluation: RAGAS, faithfulness, answer relevance</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-04</span> Fine-Tuning &amp; Open-Source LLMs <span class="dur">Week 5</span></summary>
+      <div class="topics"><ul>
+        <li>Fine-tune vs RAG vs prompting — decision framework</li>
+        <li>PEFT: LoRA, QLoRA</li>
+        <li>Quantization: GGUF, GPTQ, AWQ, bitsandbytes</li>
+        <li>Local models: Ollama, vLLM, llama.cpp</li>
+        <li>Hugging Face: datasets, transformers, TRL</li>
+        <li>Instruction dataset preparation</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-05</span> Multimodal &amp; Production GenAI <span class="dur">Week 6</span></summary>
+      <div class="topics"><ul>
+        <li>Diffusion models; Stable Diffusion / DALL·E workflows</li>
+        <li>Vision-language models (GPT-4V, Claude vision, Gemini)</li>
+        <li>Speech: Whisper (STT), TTS</li>
+        <li>Observability: LangSmith, Langfuse</li>
+        <li>Caching, rate limiting, cost optimization</li>
+        <li>Guardrails &amp; moderation; LLM-as-judge evaluation</li>
+      </ul></div>
+    </details>
+
+    <div class="project"><div class="pk">Course Project</div>
+      <p>Production-grade <strong>RAG chatbot</strong> over custom documents — hybrid search, reranking, citations, an evaluation suite, and a Streamlit / FastAPI frontend.</p>
+    </div>
+  </section>
+
+  <!-- ============ TAB 6 : AGENTIC AI ============ -->
+  <section class="panel" id="t6" role="tabpanel">
+    <div class="course-head"><h2>Agentic AI</h2><span class="badge">6 weeks</span><span class="badge">LangChain · LangGraph · CrewAI · AutoGen · ADK · MCP · A2A</span></div>
+    <p class="course-desc">Designing, building and shipping autonomous multi-agent systems across every major framework, with tool interoperability via MCP and agent interoperability via the A2A protocol.</p>
+
+    <details open><summary><span class="mod">M-01</span> Agent Fundamentals <span class="dur">Week 1</span></summary>
+      <div class="topics"><ul>
+        <li>Anatomy of an agent: LLM + tools + memory + planning loop</li>
+        <li>ReAct, plan-and-execute, reflection</li>
+        <li>Tool / function calling deep dive</li>
+        <li>Memory: short-term, long-term, episodic, vector</li>
+        <li>Human-in-the-loop patterns</li>
+        <li>Design patterns: router, orchestrator–worker, evaluator–optimizer</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-02</span> LangChain <span class="dur">Weeks 1–2</span></summary>
+      <div class="topics"><ul>
+        <li>Chat models, prompts, output parsers</li>
+        <li>LCEL &amp; Runnables; chains &amp; memory</li>
+        <li>Document loaders, splitters, retrievers</li>
+        <li>Tools &amp; toolkits; custom tool creation</li>
+        <li>Tool-calling agents</li>
+        <li>LangSmith tracing &amp; debugging</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-03</span> LangGraph <span class="dur">Weeks 2–3</span></summary>
+      <div class="topics"><ul>
+        <li>Why graphs beat linear chains</li>
+        <li>StateGraph: nodes, edges, conditional edges</li>
+        <li>State management, reducers, message state</li>
+        <li>Cycles, branching, parallelism</li>
+        <li>Checkpointing &amp; persistence (cross-session memory)</li>
+        <li>Human-in-the-loop interrupts; subgraphs &amp; multi-agent graphs</li>
+        <li>Streaming: values, updates, tokens</li>
+        <li>Builds: research agent, support agent, self-correcting RAG (CRAG / Self-RAG)</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-04</span> CrewAI <span class="dur">Weeks 3–4</span></summary>
+      <div class="topics"><ul>
+        <li>Crews, Agents, Tasks; sequential vs hierarchical processes</li>
+        <li>Role-based design: role, goal, backstory</li>
+        <li>Built-in &amp; custom tools</li>
+        <li>Flows (event-driven orchestration)</li>
+        <li>Memory &amp; knowledge in CrewAI</li>
+        <li>Builds: content-creation crew, market-research crew</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-05</span> AutoGen <span class="dur">Week 4</span></summary>
+      <div class="topics"><ul>
+        <li>ConversableAgent, AssistantAgent, UserProxyAgent</li>
+        <li>Two-agent chats, group chats, GroupChatManager</li>
+        <li>Sandboxed code-execution agents</li>
+        <li>AutoGen Studio</li>
+        <li>Conversation patterns: sequential &amp; nested chats</li>
+        <li>Build: multi-agent coding assistant</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-06</span> Google ADK <span class="dur">Week 5</span></summary>
+      <div class="topics"><ul>
+        <li>ADK architecture: agents, tools, runners, sessions</li>
+        <li>LlmAgent + workflow agents (Sequential, Parallel, Loop)</li>
+        <li>Tool ecosystem &amp; Google service integrations</li>
+        <li>Multi-agent hierarchies</li>
+        <li>Deployment: Vertex AI Agent Engine</li>
+        <li>Agent evaluation in ADK</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-07</span> MCP — Model Context Protocol <span class="dur">Weeks 5–6</span></summary>
+      <div class="topics"><ul>
+        <li>What MCP standardizes: agent ↔ tools/context</li>
+        <li>Architecture: hosts, clients, servers</li>
+        <li>Primitives: tools, resources, prompts</li>
+        <li>Building an MCP server (Python SDK / FastMCP)</li>
+        <li>Connecting servers to Claude Desktop, IDEs &amp; agents</li>
+        <li>Transports: stdio vs HTTP/SSE; security considerations</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-08</span> A2A — Agent-to-Agent Protocol <span class="dur">Week 6</span></summary>
+      <div class="topics"><ul>
+        <li>Why agent interoperability matters</li>
+        <li>Agent Cards, tasks, messages, artifacts</li>
+        <li>A2A vs MCP: complementary layers (MCP = agent↔tools, A2A = agent↔agent)</li>
+        <li>Discovery &amp; capability negotiation</li>
+        <li>Building A2A-compliant agents</li>
+        <li>Interop demo: LangGraph agent ↔ CrewAI agent over A2A</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-09</span> Production Agentic Systems <span class="dur">Week 6</span></summary>
+      <div class="topics"><ul>
+        <li>Agent evaluation: task success rate, trajectory evaluation</li>
+        <li>Observability &amp; tracing for agents</li>
+        <li>Cost &amp; latency control; guardrails</li>
+        <li>Safety: sandboxing, permissioning, approval workflows</li>
+        <li>Framework comparison: LangGraph vs CrewAI vs AutoGen vs ADK</li>
+      </ul></div>
+    </details>
+
+    <div class="project"><div class="pk">Capstone Projects (pick 2)</div>
+      <ul>
+        <li><strong>Autonomous Research Assistant</strong> — LangGraph multi-agent with web search, RAG &amp; human review</li>
+        <li><strong>Enterprise Support System</strong> — CrewAI/AutoGen crew using MCP servers for internal tools</li>
+        <li><strong>Cross-Framework Agent Network</strong> — different frameworks talking via A2A</li>
+        <li><strong>Personal AI Employee</strong> — ADK agent with calendar/email/task tools, cloud-deployed</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>python-only track · 6 courses · projects + weekly assessments in every course</footer>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+
+  function activate(targetId, scroll) {
+    const tab = document.querySelector('.tab[data-target="' + targetId + '"]');
+    if (!tab) return;
+    tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    panels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    document.getElementById(targetId).classList.add('active');
+    if (scroll) window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      activate(tab.dataset.target, true);
+      // Reflect the open course in the URL so it can be shared / deep-linked.
+      history.replaceState(null, '', '#' + tab.dataset.target);
+    });
+  });
+
+  // Deep-link support: open the course named in the URL hash (e.g. #t5),
+  // and respond to hash changes (back/forward, links from the main site).
+  function openFromHash() {
+    const id = (location.hash || '').replace('#', '');
+    if (id) activate(id, false);
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+
+  // ---- Generic single-select tab strip ----------------------------------
+  // One reusable helper drives every tab level (modules and sub-topics):
+  // given a list of {label, panel} items it builds a tab bar, shows the
+  // first panel, and wires click-to-switch so exactly one panel shows.
+  function buildTabs(items, barClass, tabClass) {
+    const bar = document.createElement('div');
+    bar.className = barClass;
+    bar.setAttribute('role', 'tablist');
+    const tabs = items.map((it, i) => {
+      const t = document.createElement('button');
+      t.type = 'button';
+      t.className = tabClass + (i === 0 ? ' active' : '');
+      t.setAttribute('role', 'tab');
+      t.innerHTML = it.label;
+      it.panel.classList.toggle('active', i === 0);
+      bar.appendChild(t);
+      return t;
+    });
+    bar.addEventListener('click', (e) => {
+      const t = e.target.closest('.' + tabClass);
+      if (!t) return;
+      const idx = tabs.indexOf(t);
+      tabs.forEach((x, j) => x.classList.toggle('active', j === idx));
+      items.forEach((it, j) => it.panel.classList.toggle('active', j === idx));
+    });
+    return bar;
+  }
+
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+  // ---- Sub-topics (level 2): each <h4> in a module becomes a tab -----------
+  // Runs first, while the modules are still <details>, so it can find the
+  // <h4>/<ul> pairs. Modules with no <h4> keep a flat item list.
+  document.querySelectorAll('.topics').forEach((topics) => {
+    const h4s = [...topics.querySelectorAll(':scope > h4')];
+    if (!h4s.length) return;
+    const panels = document.createElement('div');
+    panels.className = 'subpanels';
+    const items = h4s.map((h4) => {
+      const ul = h4.nextElementSibling;
+      if (ul && ul.tagName === 'UL') { ul.classList.add('subpanel'); panels.appendChild(ul); }
+      const label = esc(h4.textContent);
+      h4.remove();
+      return { label, panel: ul };
+    });
+    const bar = buildTabs(items, 'subtabbar', 'subtab');
+    topics.appendChild(bar);
+    topics.appendChild(panels);
+  });
+
+  // ---- Modules (level 1 within a course): each <details> becomes a tab -----
+  document.querySelectorAll('.panel').forEach((panel) => {
+    const modules = [...panel.querySelectorAll(':scope > details')];
+    if (!modules.length) return;
+    const mpanels = document.createElement('div');
+    mpanels.className = 'module-panels';
+    const items = modules.map((det) => {
+      const code = (det.querySelector('.mod')?.textContent || '').trim();
+      const dur = (det.querySelector('.dur')?.textContent || '').trim();
+      // Title = the summary's own text (excluding the .mod / .dur spans).
+      let title = '';
+      det.querySelector('summary').childNodes.forEach((n) => {
+        if (n.nodeType === 3) title += n.textContent;
+      });
+      title = title.trim();
+      const topics = det.querySelector('.topics');
+
+      const mp = document.createElement('div');
+      mp.className = 'mpanel';
+      const head = document.createElement('div');
+      head.className = 'mpanel-head';
+      head.innerHTML = '<h3>' + esc(title) + '</h3>' + (dur ? '<span class="mpanel-dur">' + esc(dur) + '</span>' : '');
+      mp.appendChild(head);
+      if (topics) mp.appendChild(topics);
+      mpanels.appendChild(mp);
+
+      const label = (code ? '<span class="mtab-code">' + esc(code) + '</span>' : '') + '<span>' + esc(title) + '</span>';
+      det.remove();
+      return { label, panel: mp };
+    });
+    const bar = buildTabs(items, 'module-tabbar', 'mtab');
+    // Place the module tabs + panels where the modules were (before .project).
+    const anchor = panel.querySelector('.project');
+    panel.insertBefore(bar, anchor);
+    panel.insertBefore(mpanels, anchor);
+  });
+</script>
+</body>
+</html>
