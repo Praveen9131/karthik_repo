@@ -202,13 +202,13 @@
 
   <!-- ============ TAB 1 : PYTHON FUNDAMENTALS + OOP ============ -->
   <section class="panel active" id="t1" role="tabpanel">
-    <div class="course-head"><h2>Python Programming: Fundamentals to OOP</h2><span class="badge">6 weeks</span><span class="badge">No prerequisites</span></div>
-    <p class="course-desc">Absolute-beginner-friendly course covering everything from your first line of Python to full object-oriented design, exception handling, and clean-code principles.</p>
+    <div class="course-head"><h2>Fundamentals of Programming</h2><span class="badge">6 weeks</span><span class="badge">No prerequisites</span></div>
+    <p class="course-desc">Absolute-beginner-friendly course covering everything from your first program to full object-oriented design, exception handling, and clean-code principles.</p>
 
-    <details open><summary><span class="mod">M-01</span> Getting Started with Python <span class="dur">Week 1</span></summary>
+    <details open><summary><span class="mod">M-01</span> Getting Started with Programming <span class="dur">Week 1</span></summary>
       <div class="topics"><ul>
-        <li>How Python runs code: interpreter, bytecode, CPython</li>
-        <li>Setup: Python, VS Code, Jupyter, Git &amp; GitHub basics</li>
+        <li>How programs run: interpreter vs. compiler, bytecode &amp; execution</li>
+        <li>Setup: editor / IDE, notebooks, Git &amp; GitHub basics</li>
         <li>Variables, data types, type casting, id() &amp; mutability</li>
         <li>Input/output, f-strings and formatting</li>
         <li>Operators: arithmetic, relational, logical, bitwise, identity, membership</li>
@@ -263,11 +263,11 @@
           <li>Dunder methods: __str__, __repr__, __eq__, __len__, __iter__</li>
           <li>Composition vs inheritance; dataclasses</li>
         </ul>
-        <h4>Robust Python</h4>
+        <h4>Robust Programs</h4>
         <ul>
           <li>Exception handling: try/except/else/finally, custom exceptions</li>
           <li>File handling: text, CSV, JSON; context managers (with)</li>
-          <li>Modules, packages, virtual environments (venv, pip)</li>
+          <li>Modules, packages &amp; dependency / environment management</li>
           <li>Type hints &amp; mypy basics</li>
           <li>Design patterns: Singleton, Factory, Observer, Strategy</li>
           <li>SOLID principles overview</li>
@@ -282,7 +282,7 @@
 
   <!-- ============ TAB 2 : DSA ============ -->
   <section class="panel" id="t2" role="tabpanel">
-    <div class="course-head"><h2>Data Structures &amp; Algorithms in Python</h2><span class="badge">5 modules</span><span class="badge">52 periods</span></div>
+    <div class="course-head"><h2>Data Structures &amp; Algorithms</h2><span class="badge">5 modules</span><span class="badge">52 periods</span></div>
 
     <details open><summary><span class="mod">M-01</span> Programming &amp; Computer Fundamentals <span class="dur">10 periods</span></summary>
       <div class="topics">
@@ -482,22 +482,18 @@
         </ul>
       </div>
     </details>
-
-    <div class="project"><div class="pk">Course Project</div>
-      <p>Build your own <strong>Python data-structure library</strong> (linked list, stack, queue, BST, heap, trie, graph, DSU) with unit tests — plus a solved-problems tracker of <strong>150+ LeetCode problems</strong>.</p>
-    </div>
   </section>
 
   <!-- ============ TAB 3 : COMPETITIVE PROGRAMMING ============ -->
   <section class="panel" id="t3" role="tabpanel">
-    <div class="course-head"><h2>Competitive Programming (Python)</h2><span class="badge">6 weeks</span><span class="badge">Weekly contests</span></div>
-    <p class="course-desc">Contest-oriented training on Codeforces, CodeChef and AtCoder — advanced algorithms, math, and speed. Solved fully in Python (with PyPy submission tips for tight time limits).</p>
+    <div class="course-head"><h2>Competitive Programming</h2><span class="badge">6 weeks</span><span class="badge">Weekly contests</span></div>
+    <p class="course-desc">Contest-oriented training on Codeforces, CodeChef and AtCoder — advanced algorithms, math, and speed, with practical tips for staying within tight time limits.</p>
     <div class="note">Weekly participation in at least one rated contest is mandatory, followed by upsolving of unsolved problems.</div>
 
-    <details open><summary><span class="mod">M-01</span> CP Essentials in Python <span class="dur">Week 1</span></summary>
+    <details open><summary><span class="mod">M-01</span> CP Essentials <span class="dur">Week 1</span></summary>
       <div class="topics"><ul>
         <li>Fast I/O: sys.stdin.readline, sys.stdout, input buffering</li>
-        <li>PyPy vs CPython for contests; recursion limits &amp; iterative rewrites</li>
+        <li>Runtime choices for contests; recursion limits &amp; iterative rewrites</li>
         <li>Key libraries: heapq, bisect, collections, itertools, math, functools</li>
         <li>sortedcontainers (SortedList / SortedDict) as ordered-set replacement</li>
         <li>Overflow-free big integers; modular arithmetic (mod 1e9+7)</li>
@@ -709,183 +705,276 @@
 
   <!-- ============ TAB 5 : GENERATIVE AI ============ -->
   <section class="panel" id="t5" role="tabpanel">
-    <div class="course-head"><h2>Generative AI</h2><span class="badge">6 weeks</span><span class="badge">LLMs · RAG · Fine-tuning</span></div>
-    <p class="course-desc">Working with large language models in production: APIs, prompting, embeddings, retrieval-augmented generation, fine-tuning, and multimodal systems.</p>
+    <div class="course-head"><h2>Generative AI</h2><span class="badge">6 weeks</span><span class="badge">NLP · LLMs · RAG · LangChain · Cloud</span></div>
+    <p class="course-desc">From NLP foundations to large language models in production — prompting, embeddings, vector databases, retrieval-augmented generation, LangChain, LangFlow, LangServe, observability, and cloud deployment.</p>
 
-    <details open><summary><span class="mod">M-01</span> LLM Foundations <span class="dur">Week 1</span></summary>
+    <details open><summary><span class="mod">M-01</span> NLP Fundamentals</summary>
       <div class="topics"><ul>
-        <li>How LLMs work: pretraining, tokenization (BPE), context windows</li>
-        <li>Instruction tuning, RLHF, DPO (concepts)</li>
-        <li>Model landscape: GPT, Claude, Gemini, Llama, Mistral; open vs closed</li>
-        <li>Sampling: temperature, top-p, top-k, penalties</li>
-        <li>Limitations: hallucination, cutoff, context limits</li>
-        <li>APIs: OpenAI, Anthropic, Google Gemini</li>
-        <li>Structured outputs, JSON mode, function / tool calling</li>
+        <li>Text Processing</li>
+        <li>Tokenization</li>
+        <li>Lemmatization</li>
+        <li>Stemming</li>
+        <li>Named Entity Recognition</li>
+        <li>Text Classification</li>
+        <li>Sentiment Analysis</li>
+        <li>Hugging Face</li>
+        <li>SpaCy</li>
+        <li>NLTK</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-02</span> Prompt Engineering <span class="dur">Week 2</span></summary>
+    <details><summary><span class="mod">M-02</span> LLM Fundamentals</summary>
       <div class="topics"><ul>
-        <li>Zero-shot, few-shot, chain-of-thought</li>
-        <li>System prompts, role prompting, output formatting</li>
-        <li>ReAct prompting; self-consistency</li>
-        <li>Prompt templates &amp; versioning</li>
-        <li>Prompt injection &amp; jailbreak awareness (security)</li>
-        <li>Evaluating prompt quality</li>
+        <li>Transformers</li>
+        <li>Encoder-Decoder Models</li>
+        <li>GPT Models</li>
+        <li>Open Source LLMs</li>
+        <li>Hugging Face Models</li>
+        <li>Ollama Models</li>
+        <li>Groq API</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-03</span> Embeddings &amp; RAG <span class="dur">Weeks 3–4</span></summary>
+    <details><summary><span class="mod">M-03</span> Prompt Engineering</summary>
       <div class="topics"><ul>
-        <li>Embedding models: OpenAI, Cohere, sentence-transformers</li>
-        <li>Similarity: cosine, dot product, Euclidean</li>
-        <li>Vector DBs: ChromaDB, FAISS, Pinecone, Qdrant, Weaviate, pgvector</li>
-        <li>Chunking: fixed, recursive, semantic, document-aware</li>
-        <li>End-to-end RAG pipeline</li>
-        <li>Advanced RAG: hybrid search (BM25 + dense), reranking, query rewriting, HyDE, parent-document retrieval</li>
-        <li>Multimodal RAG (images + text)</li>
-        <li>Evaluation: RAGAS, faithfulness, answer relevance</li>
+        <li>Zero-shot Prompting</li>
+        <li>One-shot Prompting</li>
+        <li>Few-shot Prompting</li>
+        <li>Chain of Thought</li>
+        <li>Structured Outputs</li>
+        <li>Prompt Templates</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-04</span> Fine-Tuning &amp; Open-Source LLMs <span class="dur">Week 5</span></summary>
+    <details><summary><span class="mod">M-04</span> LangChain Basics</summary>
       <div class="topics"><ul>
-        <li>Fine-tune vs RAG vs prompting — decision framework</li>
-        <li>PEFT: LoRA, QLoRA</li>
-        <li>Quantization: GGUF, GPTQ, AWQ, bitsandbytes</li>
-        <li>Local models: Ollama, vLLM, llama.cpp</li>
-        <li>Hugging Face: datasets, transformers, TRL</li>
-        <li>Instruction dataset preparation</li>
+        <li>Document Loaders</li>
+        <li>Data Ingestion</li>
+        <li>Text Splitters</li>
+        <li>Recursive Splitter</li>
+        <li>Character Splitter</li>
+        <li>HTML Splitter</li>
+        <li>JSON Splitter</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-05</span> Multimodal &amp; Production GenAI <span class="dur">Week 6</span></summary>
+    <details><summary><span class="mod">M-05</span> Embeddings</summary>
       <div class="topics"><ul>
-        <li>Diffusion models; Stable Diffusion / DALL·E workflows</li>
-        <li>Vision-language models (GPT-4V, Claude vision, Gemini)</li>
-        <li>Speech: Whisper (STT), TTS</li>
-        <li>Observability: LangSmith, Langfuse</li>
-        <li>Caching, rate limiting, cost optimization</li>
-        <li>Guardrails &amp; moderation; LLM-as-judge evaluation</li>
+        <li>OpenAI Embeddings</li>
+        <li>Ollama Embeddings</li>
+        <li>HuggingFace Embeddings</li>
+        <li>Embedding Models</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-06</span> Vector Databases</summary>
+      <div class="topics"><ul>
+        <li>FAISS</li>
+        <li>ChromaDB</li>
+        <li>Vector Search</li>
+        <li>Retriever</li>
+        <li>Similarity Search</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-07</span> Retrieval-Augmented Generation (RAG)</summary>
+      <div class="topics"><ul>
+        <li>Basic RAG</li>
+        <li>Adaptive RAG</li>
+        <li>Self RAG</li>
+        <li>C-RAG</li>
+        <li>Local RAG</li>
+        <li>VectorDB Integration</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-08</span> LangServe</summary>
+      <div class="topics"><ul>
+        <li>API Deployment</li>
+        <li>Model Serving</li>
+        <li>REST APIs</li>
+        <li>Custom Endpoints</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-09</span> LangFlow</summary>
+      <div class="topics"><ul>
+        <li>LangFlow UI</li>
+        <li>Nodes</li>
+        <li>Chains</li>
+        <li>Prompt Engineering</li>
+        <li>Workflow Design</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-10</span> Third Party Integration</summary>
+      <div class="topics"><ul>
+        <li>SQL</li>
+        <li>CSV</li>
+        <li>NoSQL</li>
+        <li>REST APIs</li>
+        <li>GraphQL</li>
+        <li>OpenAI API</li>
+        <li>HuggingFace API</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-11</span> Observability</summary>
+      <div class="topics">
+        <h4>Langfuse</h4>
+        <ul>
+          <li>Prompt Tracking</li>
+          <li>Cost Analysis</li>
+          <li>Token Usage</li>
+          <li>Error Monitoring</li>
+        </ul>
+        <h4>LangWatch</h4>
+        <ul>
+          <li>Monitoring</li>
+          <li>Logging</li>
+          <li>Metrics</li>
+        </ul>
+        <h4>LangSmith</h4>
+        <ul>
+          <li>Evaluation</li>
+          <li>Testing</li>
+          <li>Workflow Debugging</li>
+        </ul>
+      </div>
+    </details>
+
+    <details><summary><span class="mod">M-12</span> Cloud Deployment</summary>
+      <div class="topics"><ul>
+        <li>AWS</li>
+        <li>GCP</li>
+        <li>API Deployment</li>
+        <li>Production Deployment</li>
       </ul></div>
     </details>
 
     <div class="project"><div class="pk">Course Project</div>
-      <p>Production-grade <strong>RAG chatbot</strong> over custom documents — hybrid search, reranking, citations, an evaluation suite, and a Streamlit / FastAPI frontend.</p>
+      <p>Production-grade <strong>RAG chatbot</strong> over custom documents — retrieval with a vector database, citations, observability with Langfuse / LangSmith, served via LangServe and deployed to the cloud.</p>
     </div>
   </section>
 
   <!-- ============ TAB 6 : AGENTIC AI ============ -->
   <section class="panel" id="t6" role="tabpanel">
-    <div class="course-head"><h2>Agentic AI</h2><span class="badge">6 weeks</span><span class="badge">LangChain · LangGraph · CrewAI · AutoGen · ADK · MCP · A2A</span></div>
-    <p class="course-desc">Designing, building and shipping autonomous multi-agent systems across every major framework, with tool interoperability via MCP and agent interoperability via the A2A protocol.</p>
+    <div class="course-head"><h2>Agentic AI</h2><span class="badge">6 weeks</span><span class="badge">PhiData · LangGraph · CrewAI · AutoGen</span></div>
+    <p class="course-desc">Designing, building and shipping autonomous agents and multi-agent systems — from LangGraph and LCEL to CrewAI, AutoGen and PhiData, with agentic RAG, human-in-the-loop control, and production deployment.</p>
 
-    <details open><summary><span class="mod">M-01</span> Agent Fundamentals <span class="dur">Week 1</span></summary>
+    <details open><summary><span class="mod">M-01</span> Introduction</summary>
       <div class="topics"><ul>
-        <li>Anatomy of an agent: LLM + tools + memory + planning loop</li>
-        <li>ReAct, plan-and-execute, reflection</li>
-        <li>Tool / function calling deep dive</li>
-        <li>Memory: short-term, long-term, episodic, vector</li>
-        <li>Human-in-the-loop patterns</li>
-        <li>Design patterns: router, orchestrator–worker, evaluator–optimizer</li>
+        <li>What is Agentic AI?</li>
+        <li>AI Agents</li>
+        <li>Agentic AI vs GenAI</li>
+        <li>Multi-Agent Systems</li>
+        <li>Agentic AI Frameworks</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-02</span> LangChain <span class="dur">Weeks 1–2</span></summary>
+    <details><summary><span class="mod">M-02</span> PhiData Framework</summary>
       <div class="topics"><ul>
-        <li>Chat models, prompts, output parsers</li>
-        <li>LCEL &amp; Runnables; chains &amp; memory</li>
-        <li>Document loaders, splitters, retrievers</li>
-        <li>Tools &amp; toolkits; custom tool creation</li>
-        <li>Tool-calling agents</li>
-        <li>LangSmith tracing &amp; debugging</li>
+        <li>Agent Architecture</li>
+        <li>Knowledge Base</li>
+        <li>Memory</li>
+        <li>Chunking</li>
+        <li>Tools</li>
+        <li>Workflows</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-03</span> LangGraph <span class="dur">Weeks 2–3</span></summary>
+    <details><summary><span class="mod">M-03</span> LCEL</summary>
       <div class="topics"><ul>
-        <li>Why graphs beat linear chains</li>
-        <li>StateGraph: nodes, edges, conditional edges</li>
-        <li>State management, reducers, message state</li>
-        <li>Cycles, branching, parallelism</li>
-        <li>Checkpointing &amp; persistence (cross-session memory)</li>
-        <li>Human-in-the-loop interrupts; subgraphs &amp; multi-agent graphs</li>
-        <li>Streaming: values, updates, tokens</li>
-        <li>Builds: research agent, support agent, self-correcting RAG (CRAG / Self-RAG)</li>
+        <li>LangChain Expression Language</li>
+        <li>Prompt Chains</li>
+        <li>Output Chains</li>
+        <li>Runnable Pipelines</li>
+        <li>API Deployment</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-04</span> CrewAI <span class="dur">Weeks 3–4</span></summary>
+    <details><summary><span class="mod">M-04</span> LangGraph</summary>
       <div class="topics"><ul>
-        <li>Crews, Agents, Tasks; sequential vs hierarchical processes</li>
-        <li>Role-based design: role, goal, backstory</li>
-        <li>Built-in &amp; custom tools</li>
-        <li>Flows (event-driven orchestration)</li>
-        <li>Memory &amp; knowledge in CrewAI</li>
-        <li>Builds: content-creation crew, market-research crew</li>
+        <li>Graphs</li>
+        <li>Routers</li>
+        <li>State Management</li>
+        <li>State Reducers</li>
+        <li>Agent Memory</li>
+        <li>Message Handling</li>
+        <li>Deployment</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-05</span> AutoGen <span class="dur">Week 4</span></summary>
+    <details><summary><span class="mod">M-05</span> Human-in-the-Loop</summary>
       <div class="topics"><ul>
-        <li>ConversableAgent, AssistantAgent, UserProxyAgent</li>
-        <li>Two-agent chats, group chats, GroupChatManager</li>
-        <li>Sandboxed code-execution agents</li>
-        <li>AutoGen Studio</li>
-        <li>Conversation patterns: sequential &amp; nested chats</li>
-        <li>Build: multi-agent coding assistant</li>
+        <li>Human Feedback</li>
+        <li>Streaming</li>
+        <li>Dynamic Breakpoints</li>
+        <li>Time Travel</li>
+        <li>State Editing</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-06</span> Google ADK <span class="dur">Week 5</span></summary>
+    <details><summary><span class="mod">M-06</span> Agentic RAG</summary>
       <div class="topics"><ul>
-        <li>ADK architecture: agents, tools, runners, sessions</li>
-        <li>LlmAgent + workflow agents (Sequential, Parallel, Loop)</li>
-        <li>Tool ecosystem &amp; Google service integrations</li>
-        <li>Multi-agent hierarchies</li>
-        <li>Deployment: Vertex AI Agent Engine</li>
-        <li>Agent evaluation in ADK</li>
+        <li>Adaptive RAG</li>
+        <li>Self RAG</li>
+        <li>C-RAG</li>
+        <li>Autonomous Retrieval</li>
+        <li>Agent-based Retrieval</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-07</span> MCP — Model Context Protocol <span class="dur">Weeks 5–6</span></summary>
+    <details><summary><span class="mod">M-07</span> Multi-Agent Systems</summary>
       <div class="topics"><ul>
-        <li>What MCP standardizes: agent ↔ tools/context</li>
-        <li>Architecture: hosts, clients, servers</li>
-        <li>Primitives: tools, resources, prompts</li>
-        <li>Building an MCP server (Python SDK / FastMCP)</li>
-        <li>Connecting servers to Claude Desktop, IDEs &amp; agents</li>
-        <li>Transports: stdio vs HTTP/SSE; security considerations</li>
+        <li>Agent Nodes</li>
+        <li>Communication</li>
+        <li>Collaboration</li>
+        <li>Task Assignment</li>
+        <li>Agent Coordination</li>
+        <li>Distributed Agents</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-08</span> A2A — Agent-to-Agent Protocol <span class="dur">Week 6</span></summary>
+    <details><summary><span class="mod">M-08</span> CrewAI</summary>
       <div class="topics"><ul>
-        <li>Why agent interoperability matters</li>
-        <li>Agent Cards, tasks, messages, artifacts</li>
-        <li>A2A vs MCP: complementary layers (MCP = agent↔tools, A2A = agent↔agent)</li>
-        <li>Discovery &amp; capability negotiation</li>
-        <li>Building A2A-compliant agents</li>
-        <li>Interop demo: LangGraph agent ↔ CrewAI agent over A2A</li>
+        <li>Roles</li>
+        <li>Memory</li>
+        <li>Guardrails</li>
+        <li>Planning</li>
+        <li>Cooperation</li>
+        <li>Workflow Automation</li>
+        <li>LangChain Tools</li>
       </ul></div>
     </details>
 
-    <details><summary><span class="mod">M-09</span> Production Agentic Systems <span class="dur">Week 6</span></summary>
+    <details><summary><span class="mod">M-09</span> AutoGen</summary>
       <div class="topics"><ul>
-        <li>Agent evaluation: task success rate, trajectory evaluation</li>
-        <li>Observability &amp; tracing for agents</li>
-        <li>Cost &amp; latency control; guardrails</li>
-        <li>Safety: sandboxing, permissioning, approval workflows</li>
-        <li>Framework comparison: LangGraph vs CrewAI vs AutoGen vs ADK</li>
+        <li>Autonomous Agents</li>
+        <li>Agent Communication</li>
+        <li>Decision Making</li>
+        <li>Feedback Loops</li>
+        <li>Agent Learning</li>
+        <li>Multi-Agent Collaboration</li>
+        <li>Deployment</li>
+      </ul></div>
+    </details>
+
+    <details><summary><span class="mod">M-10</span> End-to-End Agentic Projects</summary>
+      <div class="topics"><ul>
+        <li>Autonomous Agents</li>
+        <li>AI Assistants</li>
+        <li>Multi-Agent Applications</li>
+        <li>Production Systems</li>
       </ul></div>
     </details>
 
     <div class="project"><div class="pk">Capstone Projects (pick 2)</div>
       <ul>
-        <li><strong>Autonomous Research Assistant</strong> — LangGraph multi-agent with web search, RAG &amp; human review</li>
-        <li><strong>Enterprise Support System</strong> — CrewAI/AutoGen crew using MCP servers for internal tools</li>
-        <li><strong>Cross-Framework Agent Network</strong> — different frameworks talking via A2A</li>
-        <li><strong>Personal AI Employee</strong> — ADK agent with calendar/email/task tools, cloud-deployed</li>
+        <li><strong>Autonomous Research Assistant</strong> — LangGraph multi-agent with web search, agentic RAG &amp; human review</li>
+        <li><strong>Enterprise Support Crew</strong> — CrewAI/AutoGen agents with tools, memory &amp; guardrails</li>
+        <li><strong>Knowledge-Base Assistant</strong> — PhiData agent with memory, knowledge base &amp; workflows</li>
+        <li><strong>Production AI Assistant</strong> — multi-agent application deployed to the cloud</li>
       </ul>
     </div>
   </section>
